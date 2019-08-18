@@ -1,10 +1,17 @@
 import { combineReducers } from 'redux';
 
-import { formReducer } from './formReducer';
-import { interactionReducer } from './interactionReducer';
-import { statusReducer } from './statusReducer';
-import { userReducer } from './userReducer';
-import { validationReducer } from './validationReducer';
+import { Actions as FormActions, formReducer } from './formReducer';
+import { Actions as InteractionsActions, interactionReducer } from './interactionReducer';
+import { Actions as StatusActions, statusReducer } from './statusReducer';
+import { Actions as UserActions, userReducer } from './userReducer';
+import { Actions as ValidationActions, validationReducer } from './validationReducer';
+
+export type AllActions =
+  | FormActions
+  | InteractionsActions
+  | StatusActions
+  | UserActions
+  | ValidationActions;
 
 export const rootReducer = combineReducers({
   form: formReducer,
